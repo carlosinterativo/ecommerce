@@ -6,8 +6,18 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitcc36632a5803f71e680684615f0744d0
 {
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/interativo/php-classes/src',
+    public static $prefixLengthsPsr4 = array (
+        'I' => 
+        array (
+            'Interativo\\' => 11,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Interativo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/interativobr/php-classes/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -42,7 +52,8 @@ class ComposerStaticInitcc36632a5803f71e680684615f0744d0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->fallbackDirsPsr4 = ComposerStaticInitcc36632a5803f71e680684615f0744d0::$fallbackDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcc36632a5803f71e680684615f0744d0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcc36632a5803f71e680684615f0744d0::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitcc36632a5803f71e680684615f0744d0::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitcc36632a5803f71e680684615f0744d0::$classMap;
 
